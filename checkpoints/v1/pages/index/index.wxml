@@ -1,0 +1,59 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <!-- 暂时注释掉logo图片 -->
+    <!-- <image class="logo" src="/images/logo.png" mode="aspectFit"></image> -->
+    <view class="title">亲子游戏生成器</view>
+    <view class="subtitle">一键生成有趣的亲子互动游戏</view>
+  </view>
+  
+  <view class="form-section card">
+    <view class="form-item">
+      <text class="form-label">我是</text>
+      <picker bindchange="bindParentIdentityChange" value="{{parentIdentityIndex}}" range="{{parentIdentities}}">
+        <view class="picker">
+          <text>{{parentIdentities[parentIdentityIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">孩子年龄</text>
+      <picker bindchange="bindAgeRangeChange" value="{{ageRangeIndex}}" range="{{ageRanges}}">
+        <view class="picker">
+          <text>{{ageRanges[ageRangeIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">游戏类型</text>
+      <picker bindchange="bindGameTypeChange" value="{{gameTypeIndex}}" range="{{gameTypes}}">
+        <view class="picker">
+          <text>{{gameTypes[gameTypeIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="form-label">可用时间</text>
+      <picker bindchange="bindAvailableTimeChange" value="{{availableTimeIndex}}" range="{{availableTimes}}">
+        <view class="picker">
+          <text>{{availableTimes[availableTimeIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  
+  <view class="btn-section">
+    <button class="btn btn-primary" bindtap="generateGame" disabled="{{isGenerating}}">
+      <block wx:if="{{!isGenerating}}">生成游戏</block>
+      <block wx:else>生成中...</block>
+    </button>
+    <view class="tip-text">每日可免费生成3次游戏</view>
+  </view>
+</view> 

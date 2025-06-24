@@ -1,0 +1,39 @@
+<!--pages/gameExecution/gameExecution.wxml-->
+<view class="container">
+  <view class="game-header card">
+    <view class="game-title">{{game.title}}</view>
+    <view class="game-description">{{game.description}}</view>
+  </view>
+  
+  <block wx:if="{{!isCompleted}}">
+    <view class="step-section card">
+      <view class="step-header">
+        <text class="step-number">步骤 {{currentStepIndex + 1}}/{{game.steps.length}}</text>
+        <progress class="step-progress" percent="{{(currentStepIndex + 1) / game.steps.length * 100}}" stroke-width="3" activeColor="#6A5ACD" backgroundColor="#f0f0f0"/>
+      </view>
+      <view class="step-content">
+        <text>{{game.steps[currentStepIndex]}}</text>
+      </view>
+      <view class="step-action">
+        <button class="btn btn-primary" bindtap="nextStep">
+          {{currentStepIndex < game.steps.length - 1 ? '下一步' : '完成游戏'}}
+        </button>
+      </view>
+    </view>
+  </block>
+  
+  <block wx:else>
+    <view class="completion-section card">
+      <view class="completion-header">
+        <icon type="success" size="64" color="#6A5ACD"></icon>
+        <view class="completion-title">恭喜完成游戏！</view>
+        <view class="completion-subtitle">希望您和孩子玩得开心！</view>
+      </view>
+      <view class="completion-actions">
+        <button class="btn btn-primary" bindtap="restart">重新开始</button>
+        <button class="btn btn-secondary" bindtap="saveGame">保存到我的游戏</button>
+        <button class="btn btn-secondary" bindtap="regenerateGame">重新生成</button>
+      </view>
+    </view>
+  </block>
+</view> 

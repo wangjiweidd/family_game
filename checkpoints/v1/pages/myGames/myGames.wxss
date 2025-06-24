@@ -1,0 +1,119 @@
+/**myGames.wxss**/
+.container {
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.page-header {
+  margin-bottom: 30rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #6A5ACD;
+  margin-bottom: 10rpx;
+}
+
+.page-subtitle {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.game-list {
+  margin-bottom: 30rpx;
+}
+
+.game-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+
+.game-info {
+  flex: 1;
+}
+
+.game-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.game-description {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.game-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100rpx;
+  border-left: 1px solid #f0f0f0;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 6rpx;
+}
+
+.action-btn text {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.loading-section {
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.no-more-data {
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+  padding: 30rpx 0;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.empty-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: #999;
+  margin-bottom: 40rpx;
+} 

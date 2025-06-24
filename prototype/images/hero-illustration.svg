@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="100" cy="100" r="80" fill="white" fill-opacity="0.1"/>
+    
+    <!-- 大人和孩子简笔画 -->
+    <g transform="translate(40, 40) scale(1.2)">
+        <!-- 大人 -->
+        <circle cx="50" cy="30" r="15" fill="white" fill-opacity="0.8"/>
+        <line x1="50" y1="45" x2="50" y2="80" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <line x1="50" y1="55" x2="30" y2="70" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <line x1="50" y1="55" x2="70" y2="70" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <line x1="50" y1="80" x2="35" y2="110" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <line x1="50" y1="80" x2="65" y2="110" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        
+        <!-- 孩子 -->
+        <circle cx="90" cy="50" r="10" fill="white" fill-opacity="0.8"/>
+        <line x1="90" y1="60" x2="90" y2="85" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <line x1="90" y1="65" x2="75" y2="75" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <line x1="90" y1="65" x2="105" y2="75" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <line x1="90" y1="85" x2="80" y2="105" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <line x1="90" y1="85" x2="100" y2="105" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        
+        <!-- 大人牵孩子的手 -->
+        <line x1="70" y1="70" x2="75" y2="75" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 装饰元素 -->
+    <circle cx="160" cy="40" r="15" fill="white" fill-opacity="0.2"/>
+    <circle cx="180" cy="70" r="8" fill="white" fill-opacity="0.15"/>
+    <circle cx="30" cy="150" r="12" fill="white" fill-opacity="0.15"/>
+    <circle cx="50" cy="170" r="6" fill="white" fill-opacity="0.1"/>
+</svg> 

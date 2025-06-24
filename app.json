@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/gameExecution/gameExecution",
+    "pages/myGames/myGames"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6A5ACD",
+    "navigationBarTitleText": "亲子游戏生成器",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#6A5ACD",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "游戏生成",
+        "iconPath": "images/icon_generate.png",
+        "selectedIconPath": "images/icon_generate_selected.png"
+      },
+      {
+        "pagePath": "pages/myGames/myGames",
+        "text": "我的游戏",
+        "iconPath": "images/icon_history.png",
+        "selectedIconPath": "images/icon_history_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "cloud": true,
+  "lazyCodeLoading": "requiredComponents"
+} 

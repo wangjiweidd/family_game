@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>亲子游戏生成器 - 游戏进行</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game-play.css">
+    <link rel="stylesheet" href="css/warm-playful-theme.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="status-bar">
+            <div class="status-bar-time">10:24</div>
+            <div class="status-bar-icons">
+                <div class="status-icon signal"></div>
+                <div class="status-icon wifi"></div>
+                <div class="status-icon battery"></div>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <!-- 顶部区域 -->
+            <div class="game-header">
+                <div class="back-button">
+                    <span class="back-icon">←</span>
+                </div>
+                <div class="game-title">神奇故事接龙</div>
+                <div class="game-type-badge game-language">语言类</div>
+            </div>
+            
+            <!-- 进度条区域 -->
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%;"></div>
+                </div>
+                <div class="progress-text">步骤 2/5</div>
+            </div>
+
+            <!-- 游戏步骤抽屉 -->
+            <div class="steps-drawer">
+                <div class="drawer-handle"></div>
+                <div class="drawer-content">
+                    <div class="drawer-steps">
+                        <div class="drawer-step completed">
+                            <div class="drawer-step-number">1</div>
+                            <div class="drawer-step-title">选择故事主题</div>
+                        </div>
+                        <div class="drawer-step active">
+                            <div class="drawer-step-number">2</div>
+                            <div class="drawer-step-title">开始故事</div>
+                        </div>
+                        <div class="drawer-step">
+                            <div class="drawer-step-number">3</div>
+                            <div class="drawer-step-title">轮流接龙</div>
+                        </div>
+                        <div class="drawer-step">
+                            <div class="drawer-step-number">4</div>
+                            <div class="drawer-step-title">添加挑战</div>
+                        </div>
+                        <div class="drawer-step">
+                            <div class="drawer-step-number">5</div>
+                            <div class="drawer-step-title">结束故事</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 当前步骤区域 -->
+            <div class="current-step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2 class="step-title">开始故事</h2>
+                </div>
+                
+                <div class="step-content">
+                    <p class="step-description">
+                        家长先开始，用一两句话设定故事的开头场景和主角。例如：「很久很久以前，有一个小女孩在森林里发现了一扇神秘的门...」
+                    </p>
+                    
+                    <div class="step-example">
+                        <h3 class="example-title">示例开头</h3>
+                        <div class="example-content">
+                            <p>「在一个阳光明媚的下午，小明在花园里发现了一只会说话的蝴蝶...」</p>
+                            <p>「遥远的星球上，住着一群彩色的外星人，他们有一个特殊的任务...」</p>
+                            <p>「海底王国里，一条小鱼迷路了，它需要找到回家的路...」</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-tips">
+                        <div class="tip-icon">💡</div>
+                        <div class="tip-content">
+                            <div class="tip-title">亲子互动提示</div>
+                            <p class="tip-text">
+                                开头设置要简单有趣，给孩子留下想象空间，不要过于复杂。可以让孩子选择他感兴趣的场景或角色。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 语音输入区域 -->
+                <div class="voice-input-section">
+                    <div class="voice-label">记录你的故事开头</div>
+                    <button class="voice-button">
+                        <span class="voice-icon">🎤</span>
+                        <span class="voice-text">按住说话</span>
+                    </button>
+                    <div class="voice-hint">或者直接说出你的故事开头</div>
+                </div>
+                
+                <!-- 文字记录区域 -->
+                <div class="text-record">
+                    <div class="record-header">
+                        <div class="record-title">故事记录</div>
+                        <div class="record-clear">清除</div>
+                    </div>
+                    <div class="record-content">
+                        <p class="record-text">在一个神秘的森林里，小兔子莉莉发现了一个闪闪发光的魔法石...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部导航区域 -->
+            <div class="bottom-nav">
+                <button class="prev-button">上一步</button>
+                <button class="next-button primary-btn">下一步</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 抽屉效果
+        const drawerHandle = document.querySelector('.drawer-handle');
+        const stepsDrawer = document.querySelector('.steps-drawer');
+        
+        drawerHandle.addEventListener('click', function() {
+            stepsDrawer.classList.toggle('open');
+        });
+        
+        // 步骤点击效果
+        document.querySelectorAll('.drawer-step').forEach(step => {
+            step.addEventListener('click', function() {
+                // 这里可以添加步骤切换逻辑
+                console.log('切换到步骤:', this.querySelector('.drawer-step-title').textContent);
+            });
+        });
+        
+        // 语音按钮效果
+        const voiceBtn = document.querySelector('.voice-button');
+        
+        voiceBtn.addEventListener('mousedown', function() {
+            this.classList.add('recording');
+            this.querySelector('.voice-text').textContent = '录音中...';
+        });
+        
+        voiceBtn.addEventListener('mouseup', function() {
+            this.classList.remove('recording');
+            this.querySelector('.voice-text').textContent = '按住说话';
+        });
+        
+        voiceBtn.addEventListener('mouseleave', function() {
+            if (this.classList.contains('recording')) {
+                this.classList.remove('recording');
+                this.querySelector('.voice-text').textContent = '按住说话';
+            }
+        });
+        
+        // 导航按钮效果
+        const prevBtn = document.querySelector('.prev-button');
+        const nextBtn = document.querySelector('.next-button');
+        
+        prevBtn.addEventListener('click', function() {
+            // 返回上一步
+            console.log('返回上一步');
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            // 进入下一步
+            console.log('进入下一步');
+        });
+        
+        // 清除记录按钮效果
+        const clearBtn = document.querySelector('.record-clear');
+        
+        clearBtn.addEventListener('click', function() {
+            document.querySelector('.record-text').textContent = '';
+        });
+    </script>
+</body>
+</html> 

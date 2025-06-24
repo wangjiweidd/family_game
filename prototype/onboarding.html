@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>亲子游戏生成器 - 新手引导</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/onboarding.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="status-bar">
+            <div class="status-bar-time">10:24</div>
+            <div class="status-bar-icons">
+                <div class="status-icon signal"></div>
+                <div class="status-icon wifi"></div>
+                <div class="status-icon battery"></div>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <!-- 欢迎页 -->
+            <div class="onboarding-slide active" id="welcome-slide">
+                <div class="onboarding-illustration">
+                    <img src="images/welcome-illustration.svg" alt="欢迎插图">
+                </div>
+                <h1 class="onboarding-title">欢迎使用<br>亲子游戏生成器</h1>
+                <p class="onboarding-description">每天5分钟，创造难忘亲子时光</p>
+                <button class="onboarding-button" onclick="showSlide('parent-slide')">开始设置</button>
+            </div>
+
+            <!-- 家长身份选择页 -->
+            <div class="onboarding-slide" id="parent-slide">
+                <h2 class="onboarding-step">第 1 步 / 共 2 步</h2>
+                <div class="onboarding-question">您是孩子的？</div>
+                <div class="onboarding-options">
+                    <div class="onboarding-option" onclick="selectOption(this, 'parent')">
+                        <div class="option-icon parent-dad"></div>
+                        <div class="option-text">爸爸</div>
+                    </div>
+                    <div class="onboarding-option" onclick="selectOption(this, 'parent')">
+                        <div class="option-icon parent-mom"></div>
+                        <div class="option-text">妈妈</div>
+                    </div>
+                    <div class="onboarding-option" onclick="selectOption(this, 'parent')">
+                        <div class="option-icon parent-other"></div>
+                        <div class="option-text">其他家人</div>
+                    </div>
+                </div>
+                <button class="onboarding-button" onclick="showSlide('age-slide')">下一步</button>
+            </div>
+
+            <!-- 孩子年龄选择页 -->
+            <div class="onboarding-slide" id="age-slide">
+                <h2 class="onboarding-step">第 2 步 / 共 2 步</h2>
+                <div class="onboarding-question">孩子的年龄范围是？</div>
+                <div class="onboarding-options">
+                    <div class="onboarding-option" onclick="selectOption(this, 'age')">
+                        <div class="option-text">3-5岁</div>
+                        <div class="option-description">幼儿园阶段</div>
+                    </div>
+                    <div class="onboarding-option" onclick="selectOption(this, 'age')">
+                        <div class="option-text">6-9岁</div>
+                        <div class="option-description">小学低年级</div>
+                    </div>
+                    <div class="onboarding-option" onclick="selectOption(this, 'age')">
+                        <div class="option-text">10-12岁</div>
+                        <div class="option-description">小学高年级</div>
+                    </div>
+                </div>
+                <button class="onboarding-button" onclick="window.location.href='index-new.html'">完成设置</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 显示指定的滑动页面
+        function showSlide(slideId) {
+            // 隐藏所有滑动页面
+            document.querySelectorAll('.onboarding-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // 显示指定的滑动页面
+            document.getElementById(slideId).classList.add('active');
+        }
+        
+        // 选择选项
+        function selectOption(element, group) {
+            // 移除同组中其他选项的选中状态
+            document.querySelectorAll(`.onboarding-option[onclick*="${group}"]`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // 为当前选项添加选中状态
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+</html> 

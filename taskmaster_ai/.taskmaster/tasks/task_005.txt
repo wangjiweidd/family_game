@@ -1,0 +1,11 @@
+# Task ID: 5
+# Title: 游戏生成功能实现
+# Status: pending
+# Dependencies: 2, 3, 4
+# Priority: medium
+# Description: 实现'生成'按钮功能，调用API获取游戏方案
+# Details:
+实现点击'生成'按钮后的逻辑，收集用户选择的信息，构建API请求参数。显示加载动画，调用OpenRouter API。解析API返回结果，提取游戏标题、简介和步骤。处理生成失败的情况，提供重试选项。
+
+# Test Strategy:
+测试不同输入组合下的生成功能，验证成功率和响应时间。测试错误处理和重试机制。

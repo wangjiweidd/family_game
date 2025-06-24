@@ -1,0 +1,23 @@
+{
+  "name": "家庭游戏项目",
+  "description": "使用taskmaster-ai的家庭游戏项目",
+  "version": "1.0.0",
+  "models": {
+    "default": "openai:gpt-4",
+    "available": ["openai:gpt-4", "openai:gpt-3.5-turbo"]
+  },
+  "api_keys": {
+    "openai": "${OPENAI_API_KEY}"
+  },
+  "tasks": {
+    "default_directory": "./tasks",
+    "history_file": "./task-history.json"
+  },
+  "tools": {
+    "enabled": ["web_search", "file_operations", "code_interpreter"]
+  },
+  "ui": {
+    "theme": "light",
+    "language": "zh-CN"
+  }
+} 

@@ -1,0 +1,425 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 移动设备容器 */
+.mobile-container {
+    max-width: 414px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 状态栏 */
+.status-bar {
+    height: 24px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #000;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.status-bar-icons {
+    display: flex;
+    gap: 4px;
+}
+
+.status-icon {
+    width: 16px;
+    height: 16px;
+    background-color: #333;
+    opacity: 0.7;
+    border-radius: 2px;
+}
+
+/* 主应用容器 */
+.app-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 60px; /* 为底部导航栏留出空间 */
+}
+
+/* 顶部Hero区域 */
+.hero-section {
+    background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-illustration {
+    position: absolute;
+    right: -20px;
+    bottom: -10px;
+    width: 140px;
+    height: 140px;
+    opacity: 0.8;
+}
+
+.hero-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-tagline {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* 选项卡片 */
+.options-card {
+    margin: -30px 16px 0;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group:last-child {
+    margin-bottom: 0;
+}
+
+.option-label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-value {
+    color: #6A11CB;
+    font-weight: 700;
+}
+
+.option-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.three-buttons .option-button {
+    flex: 1;
+    min-width: 30%;
+}
+
+.game-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.option-button {
+    background-color: #f5f7fa;
+    border: 1px solid #e0e5eb;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-button.active {
+    background-color: #eee6ff;
+    border-color: #6A11CB;
+    box-shadow: 0 2px 8px rgba(106, 17, 203, 0.15);
+}
+
+.option-button.active .option-text {
+    color: #6A11CB;
+    font-weight: 500;
+}
+
+.option-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 6px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.option-button.active .option-icon {
+    background-color: #6A11CB;
+}
+
+.option-text {
+    font-size: 13px;
+    color: #666;
+}
+
+/* 时间滑块 */
+.time-slider-container {
+    position: relative;
+    padding: 10px 0;
+}
+
+.time-slider {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #6A11CB, #2575FC);
+    outline: none;
+    border-radius: 2px;
+}
+
+.time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #6A11CB;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.time-marks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0 10px;
+}
+
+.time-marks span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 按钮区域 */
+.action-area {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.generate-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+}
+
+.generate-btn:hover {
+    box-shadow: 0 6px 16px rgba(106, 17, 203, 0.4);
+}
+
+.generate-btn.pressed {
+    transform: translateY(2px);
+    box-shadow: 0 2px 8px rgba(106, 17, 203, 0.3);
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.quick-generate {
+    margin-top: 16px;
+    text-align: center;
+    color: #6A11CB;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.quick-hint {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+}
+
+.limit-hint {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 历史推荐区域 */
+.history-section {
+    padding: 0 16px 20px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.recent-games {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.recent-games::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.recent-game-item {
+    min-width: 100px;
+    background-color: #f5f7fa;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.recent-game-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 8px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.recent-game-title {
+    font-size: 13px;
+    color: #333;
+}
+
+/* 底部导航栏 */
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 414px;
+    margin: 0 auto;
+    height: 56px;
+    background-color: white;
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 12px;
+}
+
+.tab-item.active {
+    color: #6A11CB;
+}
+
+.tab-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+    background-color: currentColor;
+    opacity: 0.7;
+    border-radius: 6px;
+}
+
+/* 游戏类型图标样式 */
+.game-quiet {
+    background-color: #8e44ad;
+}
+
+.game-active {
+    background-color: #e74c3c;
+}
+
+.game-language {
+    background-color: #3498db;
+}
+
+.game-creative {
+    background-color: #f39c12;
+}
+
+/* 家长身份图标样式 */
+.parent-dad {
+    background-color: #3498db;
+}
+
+.parent-mom {
+    background-color: #e84393;
+}
+
+.parent-other {
+    background-color: #95a5a6;
+}
+
+/* 响应式调整 */
+@media (max-width: 320px) {
+    .option-text {
+        font-size: 12px;
+    }
+    
+    .app-title {
+        font-size: 22px;
+    }
+} 

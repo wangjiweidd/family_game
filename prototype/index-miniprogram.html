@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>亲子游戏生成器 - 微信小程序版</title>
+    <link rel="stylesheet" href="css/index-miniprogram.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 -->
+        <div class="nav-bar">亲子游戏</div>
+        
+        <!-- 页面内容区域 -->
+        <div class="page-content">
+            <!-- 顶部欢迎卡片 -->
+            <div class="welcome-card">
+                <div class="decoration-circle decoration-circle-1"></div>
+                <div class="decoration-circle decoration-circle-2"></div>
+                
+                <div class="welcome-title">你和宝宝想玩什么游戏？</div>
+                <div class="welcome-subtitle">选择或随机获取适合的亲子游戏</div>
+                
+                <!-- 随机游戏按钮 -->
+                <div class="random-game-btn pulse-animation">
+                    <span class="icon">✨</span>
+                    <span>随机一个游戏</span>
+                </div>
+                
+                <div class="divider">
+                    <span>或者告诉我你们的喜好</span>
+                </div>
+            </div>
+            
+            <!-- 问题区域 -->
+            <div class="questions-area">
+                <!-- 问题一 -->
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="icon">🎮</span>
+                        <span>你们现在想怎么玩？</span>
+                    </div>
+                    <div class="options-container">
+                        <div class="option-item">
+                            <div class="option-icon">🛋️</div>
+                            <div class="option-text">坐着轻松玩</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">🏃‍♂️</div>
+                            <div class="option-text">动一动</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">🤔</div>
+                            <div class="option-text">看情况再说</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 问题二 -->
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="icon">🧩</span>
+                        <span>你们想玩哪一类的游戏？</span>
+                    </div>
+                    <div class="options-container multi-select">
+                        <div class="option-item">
+                            <div class="option-icon">💬</div>
+                            <div class="option-text">能说就说</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">🧠</div>
+                            <div class="option-text">动动脑子</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">🎨</div>
+                            <div class="option-text">来点创意</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">👫</div>
+                            <div class="option-text">一起互动</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 问题三 -->
+                <div class="question-card">
+                    <div class="question-title">
+                        <span class="icon">⏱️</span>
+                        <span>你们现在大概有多久？</span>
+                    </div>
+                    <div class="options-container">
+                        <div class="option-item">
+                            <div class="option-icon">⏱️</div>
+                            <div class="option-text">5分钟</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">🕒</div>
+                            <div class="option-text">10分钟</div>
+                        </div>
+                        <div class="option-item">
+                            <div class="option-icon">🕓</div>
+                            <div class="option-text">玩久一点</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 推荐按钮 -->
+                <div class="recommend-btn-container">
+                    <div class="recommend-btn">✨ 马上推荐游戏</div>
+                    <div class="recommend-hint">稍后可以在设置页随时修改选择哦～</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部TabBar -->
+        <div class="tab-bar">
+            <div class="tab-item active">
+                <div class="tab-icon icon-home"></div>
+                <div>游戏推荐</div>
+            </div>
+            <div class="tab-item">
+                <div class="tab-icon icon-games"></div>
+                <div>我的游戏</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 选项点击效果
+        document.querySelectorAll('.option-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const parent = this.closest('.options-container');
+                
+                // 如果是多选问题
+                if (parent.classList.contains('multi-select')) {
+                    this.classList.toggle('active');
+                } else {
+                    // 单选问题，移除其他选项的active类
+                    parent.querySelectorAll('.option-item').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // 随机游戏按钮点击效果
+        const randomBtn = document.querySelector('.random-game-btn');
+        randomBtn.addEventListener('click', function() {
+            // 这里可以添加跳转到随机游戏详情页的逻辑
+            console.log('跳转到随机游戏详情页');
+        });
+        
+        // 推荐游戏按钮点击效果
+        const recommendBtn = document.querySelector('.recommend-btn');
+        recommendBtn.addEventListener('click', function() {
+            // 这里可以添加根据选择推荐游戏的逻辑
+            console.log('根据选择推荐游戏');
+        });
+    </script>
+</body>
+</html> 

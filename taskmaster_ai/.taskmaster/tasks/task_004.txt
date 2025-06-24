@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: 游戏生成Prompt设计
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: 设计用于AI游戏生成的Prompt模板
+# Details:
+创建结构化的Prompt模板，包括基本指令、游戏类型定义、年龄适应性要求、时间限制说明等。设计输出格式，确保AI返回的游戏方案包含标题、简介和分步骤指导。针对不同选择项组合，优化Prompt以生成最适合的游戏。
+
+# Test Strategy:
+测试不同输入组合下的生成结果，评估游戏质量和适应性。进行A/B测试，比较不同Prompt模板的效果。

@@ -1,0 +1,375 @@
+/**index.wxss**/
+page {
+  background: linear-gradient(to bottom, #f9f7ff, #f0f0f8);
+}
+
+.container {
+  padding: 30rpx 30rpx 60rpx;
+  box-sizing: border-box;
+}
+
+/* 顶部区域样式 */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+  padding: 20rpx 0 30rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24rpx;
+  background: linear-gradient(135deg, #7c68ee, #6a5acd);
+  box-shadow: 0 10rpx 20rpx rgba(106, 90, 205, 0.2);
+}
+
+.illustration-container {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-placeholder {
+  width: 180rpx;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-circle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.illustration-circle:after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.hero-content {
+  text-align: center;
+  padding: 20rpx;
+  color: white;
+}
+
+.title {
+  font-size: 44rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+/* 选项区域样式 */
+.options-container {
+  background-color: white;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.option-group {
+  margin-bottom: 36rpx;
+}
+
+.option-group:last-child {
+  margin-bottom: 0;
+}
+
+.option-label {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-value {
+  font-size: 26rpx;
+  color: #6a5acd;
+  font-weight: normal;
+}
+
+.option-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.option-button {
+  flex: 1;
+  min-width: 140rpx;
+  height: 100rpx;
+  margin: 0 10rpx;
+  border-radius: 16rpx;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-button:first-child {
+  margin-left: 0;
+}
+
+.option-button:last-child {
+  margin-right: 0;
+}
+
+.option-button.active {
+  background-color: #ede9ff;
+  box-shadow: 0 4rpx 12rpx rgba(106, 90, 205, 0.2);
+}
+
+.option-button.active .option-text {
+  color: #6a5acd;
+  font-weight: 500;
+}
+
+.option-button.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 6rpx;
+  background-color: #6a5acd;
+  border-radius: 6rpx 6rpx 0 0;
+}
+
+.option-icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-bottom: 8rpx;
+  border-radius: 50%;
+}
+
+.parent-icon {
+  background-color: #ddd;
+}
+
+.parent-dad {
+  background-color: #78c2ff;
+}
+
+.parent-mom {
+  background-color: #ff9eb6;
+}
+
+.parent-other {
+  background-color: #a5d6a7;
+}
+
+.game-icon {
+  background-color: #ddd;
+}
+
+.game-quiet {
+  background-color: #9fa8da;
+}
+
+.game-active {
+  background-color: #ffb74d;
+}
+
+.game-language {
+  background-color: #81c784;
+}
+
+.game-creative {
+  background-color: #ff8a65;
+}
+
+.option-text {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.game-types .option-button {
+  margin-bottom: 20rpx;
+}
+
+.time-slider-container {
+  padding: 10rpx 0;
+}
+
+.time-marks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.time-marks text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 按钮区域样式 */
+.action-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.generate-btn {
+  width: 80%;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(135deg, #7c68ee, #6a5acd);
+  color: white;
+  font-size: 34rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8rpx 16rpx rgba(106, 90, 205, 0.3);
+  margin-bottom: 20rpx;
+  transition: all 0.3s;
+  border: none;
+}
+
+.generate-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 4rpx 8rpx rgba(106, 90, 205, 0.3);
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+}
+
+.btn-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.loading-animation {
+  display: flex;
+  margin-right: 10rpx;
+}
+
+.loading-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 6rpx;
+  animation: loading 1.4s infinite ease-in-out;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.quick-generate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 10rpx;
+}
+
+.quick-generate text {
+  font-size: 28rpx;
+  color: #6a5acd;
+}
+
+.quick-hint {
+  font-size: 24rpx !important;
+  color: #999 !important;
+  margin-top: 6rpx;
+}
+
+.limit-hint {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 历史推荐区域样式 */
+.history-section {
+  margin-top: 20rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.recent-games {
+  white-space: nowrap;
+  padding: 10rpx 0;
+}
+
+.recent-game-item {
+  display: inline-block;
+  width: 180rpx;
+  margin-right: 20rpx;
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.recent-game-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  background-color: #f0f0f0;
+  margin: 0 auto 10rpx;
+}
+
+.recent-game-title {
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} 

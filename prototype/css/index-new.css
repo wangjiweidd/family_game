@@ -1,0 +1,329 @@
+/* 新首页特定样式 */
+
+/* 顶部区域 */
+.hero-section {
+    background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%);
+    color: white;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-tagline {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 8px 12px;
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: white;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.profile-edit {
+    font-size: 10px;
+    opacity: 0.8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* 场景选择区域 */
+.scenes-section {
+    padding: 20px 16px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.scene-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.scene-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.scene-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.scene-card.active {
+    border-color: #6A11CB;
+    box-shadow: 0 4px 12px rgba(106, 17, 203, 0.2);
+}
+
+.scene-image {
+    height: 80px;
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center;
+}
+
+.scene-home {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://via.placeholder.com/150/e0e0e0/666666?text=居家');
+}
+
+.scene-outdoor {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://via.placeholder.com/150/d0d0d0/666666?text=户外');
+}
+
+.scene-travel {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://via.placeholder.com/150/c0c0c0/666666?text=旅行');
+}
+
+.scene-education {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://via.placeholder.com/150/b0b0b0/666666?text=教育');
+}
+
+.scene-content {
+    padding: 12px;
+}
+
+.scene-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.scene-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* 快速选项区域 */
+.quick-options {
+    background-color: #f8f9fa;
+    padding: 16px;
+    margin: 0 16px 20px;
+    border-radius: 12px;
+}
+
+.quick-option-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.quick-option-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.quick-option-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+.quick-option-button:hover {
+    background-color: #f5f5f5;
+}
+
+.quick-option-button.active {
+    background-color: #eee6ff;
+    border-color: #6A11CB;
+}
+
+.quick-option-button .option-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 6px;
+}
+
+.quick-option-button .option-text {
+    font-size: 12px;
+    color: #333;
+}
+
+.quick-option-button.active .option-text {
+    color: #6A11CB;
+    font-weight: 500;
+}
+
+/* 随机游戏按钮区域 */
+.random-game-section {
+    padding: 0 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random-game-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.random-game-btn:hover {
+    box-shadow: 0 6px 16px rgba(106, 17, 203, 0.4);
+}
+
+.random-game-btn.pressed {
+    transform: translateY(2px);
+    box-shadow: 0 2px 8px rgba(106, 17, 203, 0.3);
+}
+
+.random-icon {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+}
+
+.random-icon:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.limit-hint {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 历史推荐区域 */
+.history-section {
+    padding: 0 16px 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-header .section-title {
+    margin-bottom: 0;
+}
+
+.view-all {
+    font-size: 14px;
+    color: #6A11CB;
+    cursor: pointer;
+}
+
+.recent-games {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recent-game-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.recent-game-item:hover {
+    transform: translateX(2px);
+}
+
+.recent-game-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 12px;
+}
+
+.recent-game-info {
+    flex: 1;
+}
+
+.recent-game-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.recent-game-tag {
+    display: inline-block;
+    font-size: 11px;
+    color: #6A11CB;
+    background-color: #eee6ff;
+    padding: 2px 8px;
+    border-radius: 10px;
+} 

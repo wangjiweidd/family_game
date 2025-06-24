@@ -1,0 +1,326 @@
+/* 亲子游戏生成器 - 温馨活泼主题样式 */
+
+:root {
+    /* 主色调 - 温暖粉色系 */
+    --primary-color: #FF85A2;
+    --primary-light: #FFB7C9;
+    --primary-dark: #FF5A7E;
+    
+    /* 辅助色 - 阳光黄色系 */
+    --secondary-color: #FFD166;
+    --secondary-light: #FFE6A7;
+    --secondary-dark: #FFC233;
+    
+    /* 强调色 - 清新薄荷绿 */
+    --accent-color: #66D7D1;
+    --accent-light: #A2E8E5;
+    --accent-dark: #41C7C0;
+    
+    /* 中性色 */
+    --neutral-100: #FFFFFF;
+    --neutral-200: #FDF9F5;
+    --neutral-300: #F3EDE7;
+    --neutral-400: #E5DED8;
+    --neutral-500: #C8BFB9;
+    --neutral-600: #9E958F;
+    --neutral-700: #756F6A;
+    --neutral-800: #4D4945;
+    --neutral-900: #2A2826;
+    
+    /* 功能色 */
+    --success-color: #7ECBB5;
+    --warning-color: #FFD166;
+    --error-color: #FF6B6B;
+    --info-color: #66A6FF;
+    
+    /* 渐变 */
+    --gradient-primary: linear-gradient(135deg, #FF85A2 0%, #FF5A7E 100%);
+    --gradient-secondary: linear-gradient(135deg, #FFD166 0%, #FFC233 100%);
+    --gradient-accent: linear-gradient(135deg, #66D7D1 0%, #41C7C0 100%);
+    --gradient-playful: linear-gradient(135deg, #FF85A2 0%, #FFD166 100%);
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 8px rgba(255, 133, 162, 0.1);
+    --shadow-md: 0 4px 12px rgba(255, 133, 162, 0.15);
+    --shadow-lg: 0 8px 24px rgba(255, 133, 162, 0.2);
+    
+    /* 圆角 */
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+    
+    /* 字体 */
+    --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 通用样式覆盖 */
+body {
+    font-family: var(--font-family);
+    color: var(--neutral-800);
+    background-color: var(--neutral-200);
+}
+
+/* 顶部区域样式 */
+.hero-section {
+    background: var(--gradient-playful);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.app-title {
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(255, 90, 126, 0.3);
+}
+
+.app-tagline {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 按钮样式 */
+.primary-btn, .generate-btn, .random-game-btn, .onboarding-button {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 12px rgba(255, 90, 126, 0.3);
+    font-weight: 600;
+}
+
+.primary-btn:hover, .generate-btn:hover, .random-game-btn:hover, .onboarding-button:hover {
+    box-shadow: 0 6px 16px rgba(255, 90, 126, 0.4);
+    transform: translateY(-2px);
+}
+
+.primary-btn:active, .generate-btn:active, .random-game-btn:active, .onboarding-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(255, 90, 126, 0.3);
+}
+
+/* 选项按钮样式 */
+.option-button {
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.option-button.active {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(255, 133, 162, 0.2);
+    transform: scale(1.05);
+}
+
+.option-button.active .option-text {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* 游戏类型图标样式 */
+.game-quiet {
+    background-color: var(--accent-color);
+    box-shadow: 0 2px 6px rgba(102, 215, 209, 0.3);
+}
+
+.game-active {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(255, 133, 162, 0.3);
+}
+
+.game-language {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 6px rgba(255, 209, 102, 0.3);
+}
+
+.game-creative {
+    background-color: var(--info-color);
+    box-shadow: 0 2px 6px rgba(102, 166, 255, 0.3);
+}
+
+/* 家长身份图标样式 */
+.parent-dad {
+    background-color: var(--accent-color);
+    box-shadow: 0 2px 6px rgba(102, 215, 209, 0.3);
+}
+
+.parent-mom {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(255, 133, 162, 0.3);
+}
+
+.parent-other {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 6px rgba(255, 209, 102, 0.3);
+}
+
+/* 进度条样式 */
+.progress-fill {
+    background: var(--gradient-playful);
+    border-radius: var(--radius-full);
+}
+
+/* 步骤数字样式 */
+.step-number, .drawer-step.active .drawer-step-number {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(255, 133, 162, 0.3);
+}
+
+/* 完成步骤样式 */
+.drawer-step.completed .drawer-step-number {
+    background-color: var(--accent-color);
+    box-shadow: 0 2px 6px rgba(102, 215, 209, 0.3);
+}
+
+/* 提示图标样式 */
+.tip-icon {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 6px rgba(255, 209, 102, 0.3);
+}
+
+/* 语音按钮样式 */
+.voice-button {
+    background: var(--gradient-primary);
+    box-shadow: 0 4px 12px rgba(255, 90, 126, 0.3);
+}
+
+/* 导航按钮样式 */
+.prev-button, .next-button {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 卡片样式 */
+.scene-card, .options-card, .game-preparation, .game-steps, .game-tips, .recent-game-item {
+    border-radius: var(--radius-lg);
+    background-color: var(--neutral-100);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.scene-card:hover, .recent-game-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.scene-card.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(255, 133, 162, 0.25);
+    transform: translateY(-3px);
+}
+
+/* 场景图片样式 */
+.scene-image {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    overflow: hidden;
+}
+
+/* 标签样式 */
+.game-tag, .recent-game-tag {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border-radius: var(--radius-full);
+    padding: 4px 12px;
+    font-weight: 500;
+}
+
+/* 链接样式 */
+.view-all, .profile-edit {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 收藏按钮样式 */
+.favorite-btn {
+    border-radius: var(--radius-full);
+    transition: all 0.3s ease;
+}
+
+.favorite-btn.active {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* 游戏信息区域 */
+.game-info-section {
+    background: var(--gradient-playful);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* 游戏步骤区域 */
+.section-title {
+    color: var(--neutral-800);
+    font-weight: 700;
+}
+
+.section-title:before {
+    background-color: var(--primary-color);
+    border-radius: var(--radius-full);
+}
+
+/* 亲子互动元素 */
+.step-tips {
+    background-color: var(--accent-light);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.tip-title {
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+/* 底部导航栏 */
+.tab-bar {
+    background-color: var(--neutral-100);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-item.active {
+    color: var(--primary-color);
+}
+
+.tab-item.active .tab-icon {
+    background-color: var(--primary-light);
+}
+
+/* 动画效果 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.random-game-btn {
+    animation: pulse 2s infinite;
+}
+
+.random-game-btn:hover {
+    animation: none;
+}
+
+/* 装饰元素 */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: 15%;
+    width: 30px;
+    height: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-light);
+    border-radius: 50%;
+    opacity: 0.6;
+} 

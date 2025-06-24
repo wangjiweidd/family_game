@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>亲子游戏生成器 - 微信小程序版</title>
+    <link rel="stylesheet" href="css/index-miniprogram-fixed.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 -->
+        <div class="nav-bar">亲子游戏</div>
+        
+        <!-- 页面内容区域 -->
+        <div class="page-content">
+            <!-- 顶部引导区 - 亲子游戏主题风格 -->
+            <div class="hero-container">
+                <div class="hero-bg"></div>
+                <div class="hero-family-illustration">
+                    <!-- 家庭插画 SVG -->
+                    <svg width="100%" height="100%" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 父亲 -->
+                        <g transform="translate(20, 30)">
+                            <circle cx="15" cy="15" r="15" fill="#FF9F29"/>
+                            <rect x="5" y="32" width="20" height="30" rx="5" fill="#5BD6C7"/>
+                            <rect x="5" y="62" width="8" height="15" rx="2" fill="#5555AA"/>
+                            <rect x="17" y="62" width="8" height="15" rx="2" fill="#5555AA"/>
+                        </g>
+                        <!-- 母亲 -->
+                        <g transform="translate(60, 35)">
+                            <circle cx="12" cy="12" r="12" fill="#FF8A80"/>
+                            <path d="M0 30 L24 30 L24 55 L12 60 L0 55 Z" fill="#FFCC80"/>
+                            <rect x="5" y="55" width="6" height="15" rx="2" fill="#AA5555"/>
+                            <rect x="13" y="55" width="6" height="15" rx="2" fill="#AA5555"/>
+                        </g>
+                        <!-- 孩子 -->
+                        <g transform="translate(40, 50)">
+                            <circle cx="8" cy="8" r="8" fill="#FFCC80"/>
+                            <rect x="3" y="17" width="10" height="15" rx="3" fill="#FF8A80"/>
+                            <rect x="3" y="32" width="4" height="10" rx="1" fill="#5555AA"/>
+                            <rect x="9" y="32" width="4" height="10" rx="1" fill="#5555AA"/>
+                        </g>
+                        <!-- 宠物 -->
+                        <g transform="translate(25, 65)">
+                            <circle cx="6" cy="6" r="6" fill="#DDDDDD"/>
+                            <circle cx="10" cy="4" r="4" fill="#DDDDDD"/>
+                            <rect x="3" y="10" width="10" height="6" rx="3" fill="#DDDDDD"/>
+                            <path d="M13 12 L18 15" stroke="#DDDDDD" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                        <!-- 玩具 -->
+                        <g transform="translate(70, 70)">
+                            <rect x="0" y="0" width="10" height="10" rx="2" fill="#FF9F29"/>
+                            <rect x="2" y="2" width="6" height="6" rx="1" fill="#FFFFFF"/>
+                        </g>
+                        <g transform="translate(85, 75)">
+                            <circle cx="5" cy="5" r="5" fill="#5BD6C7"/>
+                        </g>
+                        <!-- 右侧装饰 -->
+                        <g transform="translate(200, 20)">
+                            <circle cx="30" cy="30" r="25" fill="#FF9F29" fill-opacity="0.6"/>
+                            <path d="M10 50 Q30 30 50 50" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+                            <path d="M15 60 Q35 40 55 60" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" stroke-opacity="0.6"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">亲子游戏生成器</h1>
+                    <p class="hero-subtitle">创造专属于你们的欢乐时光</p>
+                    <div class="hero-tags">
+                        <span class="hero-tag">互动游戏</span>
+                        <span class="hero-tag">益智成长</span>
+                        <span class="hero-tag">亲子时光</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 问题区域 - 采用更活泼的交互方式 -->
+            <div class="questions-container">
+                <!-- 问题1：活动类型 -->
+                <div class="question-section">
+                    <div class="question-tag">你们想要什么类型的活动？</div>
+                    <div class="options-scroll">
+                        <div class="option-bubble" data-value="静态" data-group="activity">
+                            <div class="option-icon">🛋️</div>
+                            <div class="option-label">坐着轻松玩</div>
+                        </div>
+                        <div class="option-bubble" data-value="动态" data-group="activity">
+                            <div class="option-icon">🏃‍♂️</div>
+                            <div class="option-label">动一动</div>
+                        </div>
+                        <div class="option-bubble" data-value="不限" data-group="activity">
+                            <div class="option-icon">🤔</div>
+                            <div class="option-label">看情况</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 问题2：游戏类型 -->
+                <div class="question-section">
+                    <div class="question-tag">喜欢哪种游戏类型？<span class="hint">（可多选）</span></div>
+                    <div class="options-flex">
+                        <div class="option-chip" data-value="表达" data-group="type" data-multi="true">
+                            <div class="option-icon">💬</div>
+                            <div class="option-label">能说就说</div>
+                        </div>
+                        <div class="option-chip" data-value="逻辑" data-group="type" data-multi="true">
+                            <div class="option-icon">🧠</div>
+                            <div class="option-label">动动脑子</div>
+                        </div>
+                        <div class="option-chip" data-value="创意" data-group="type" data-multi="true">
+                            <div class="option-icon">🎨</div>
+                            <div class="option-label">来点创意</div>
+                        </div>
+                        <div class="option-chip" data-value="互动" data-group="type" data-multi="true">
+                            <div class="option-icon">👫</div>
+                            <div class="option-label">一起互动</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 问题3：时长 -->
+                <div class="question-section">
+                    <div class="question-tag">想玩多长时间？</div>
+                    <div class="time-slider-container">
+                        <div class="time-option active" data-value="短" data-group="time">
+                            <div class="time-icon">⏱️</div>
+                            <div class="time-label">5分钟</div>
+                        </div>
+                        <div class="time-option" data-value="中" data-group="time">
+                            <div class="time-icon">🕒</div>
+                            <div class="time-label">10分钟</div>
+                        </div>
+                        <div class="time-option" data-value="长" data-group="time">
+                            <div class="time-icon">🕓</div>
+                            <div class="time-label">玩久一点</div>
+                        </div>
+                        <div class="time-slider-track">
+                            <div class="time-slider-thumb"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 推荐按钮 - 始终在首屏可见 -->
+            <div class="recommend-btn-container">
+                <button class="recommend-btn pulse-animation">
+                    <span class="recommend-btn-icon">✨</span>给我推荐游戏
+                </button>
+            </div>
+        </div>
+        
+        <!-- 底部TabBar -->
+        <div class="tab-bar">
+            <div class="tab-item active">
+                <div class="tab-icon icon-home"></div>
+                <div>游戏推荐</div>
+            </div>
+            <div class="tab-item">
+                <div class="tab-icon icon-games"></div>
+                <div>我的游戏</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 用户选择
+        const userChoices = {
+            activity: null,
+            type: [],
+            time: "短"  // 默认选择5分钟
+        };
+        
+        // 活动类型选择
+        document.querySelectorAll('.option-bubble').forEach(bubble => {
+            bubble.addEventListener('click', function() {
+                // 添加点击动画
+                this.classList.add('wx-tap-active');
+                setTimeout(() => {
+                    this.classList.remove('wx-tap-active');
+                }, 200);
+                
+                const group = this.dataset.group;
+                const value = this.dataset.value;
+                
+                // 单选逻辑
+                document.querySelectorAll(`.option-bubble[data-group="${group}"]`).forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                
+                // 保存选择
+                userChoices[group] = value;
+                
+                // 添加弹跳动画
+                this.classList.add('bounce');
+                setTimeout(() => {
+                    this.classList.remove('bounce');
+                }, 500);
+            });
+        });
+        
+        // 游戏类型选择
+        document.querySelectorAll('.option-chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                // 添加点击动画
+                this.classList.add('wx-tap-active');
+                setTimeout(() => {
+                    this.classList.remove('wx-tap-active');
+                }, 200);
+                
+                // 多选逻辑
+                this.classList.toggle('selected');
+                
+                const value = this.dataset.value;
+                if (this.classList.contains('selected')) {
+                    if (!userChoices.type.includes(value)) {
+                        userChoices.type.push(value);
+                    }
+                    
+                    // 添加弹出动画
+                    this.classList.add('pop');
+                    setTimeout(() => {
+                        this.classList.remove('pop');
+                    }, 300);
+                } else {
+                    userChoices.type = userChoices.type.filter(v => v !== value);
+                }
+            });
+        });
+        
+        // 时长选择
+        document.querySelectorAll('.time-option').forEach((option, index) => {
+            option.addEventListener('click', function() {
+                // 添加点击动画
+                this.classList.add('wx-tap-active');
+                setTimeout(() => {
+                    this.classList.remove('wx-tap-active');
+                }, 200);
+                
+                const group = this.dataset.group;
+                const value = this.dataset.value;
+                
+                // 单选逻辑
+                document.querySelectorAll(`.time-option`).forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // 保存选择
+                userChoices[group] = value;
+                
+                // 移动滑块
+                const thumb = document.querySelector('.time-slider-thumb');
+                thumb.style.left = `${index * 50}%`;
+            });
+        });
+        
+        // 推荐按钮
+        document.querySelector('.recommend-btn').addEventListener('click', function() {
+            // 添加点击动画
+            this.classList.add('wx-tap-active');
+            setTimeout(() => {
+                this.classList.remove('wx-tap-active');
+            }, 200);
+            
+            // 检查是否至少选择了活动类型
+            if (userChoices.activity) {
+                // 这里可以添加跳转到游戏详情页的逻辑
+                console.log('根据用户选择推荐游戏:', userChoices);
+                alert('即将为您推荐游戏！');
+            } else {
+                // 提示用户选择活动类型
+                const activityOptions = document.querySelector('.options-scroll');
+                activityOptions.classList.add('highlight-attention');
+                setTimeout(() => {
+                    activityOptions.classList.remove('highlight-attention');
+                }, 1000);
+            }
+        });
+        
+        // TabBar点击效果
+        document.querySelectorAll('.tab-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // 移除所有tab的active类
+                document.querySelectorAll('.tab-item').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                // 为当前tab添加active类
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: OpenRouter API接入
+# Status: pending
+# Dependencies: 1
+# Priority: medium
+# Description: 集成OpenRouter API，实现与DeepSeek文本模型的通信
+# Details:
+注册OpenRouter账号，获取API密钥。封装API调用函数，处理请求和响应。实现错误处理和重试机制。设计缓存策略，减少API调用次数，如每日预生成部分通用游戏。
+
+# Test Strategy:
+测试API连接稳定性，模拟不同网络环境下的响应情况。验证错误处理机制。测量API调用时间和成功率。

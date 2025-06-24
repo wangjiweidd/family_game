@@ -1,0 +1,137 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 顶部区域：温馨插图和标语 -->
+  <view class="hero-section">
+    <view class="illustration-container">
+      <view class="illustration-placeholder">
+        <!-- 后续可替换为实际插图 -->
+        <view class="illustration-circle"></view>
+      </view>
+    </view>
+    <view class="hero-content">
+      <view class="title">亲子游戏生成器</view>
+      <view class="tagline">每天5分钟，创造难忘亲子时光</view>
+    </view>
+  </view>
+  
+  <!-- 选项卡区域 -->
+  <view class="options-container">
+    <!-- 家长身份选择 -->
+    <view class="option-group">
+      <view class="option-label">我是</view>
+      <view class="option-buttons">
+        <view class="option-button {{parentIdentityIndex === 0 ? 'active' : ''}}" 
+              bindtap="selectParentIdentity" data-index="0">
+          <view class="option-icon parent-icon parent-dad"></view>
+          <view class="option-text">爸爸</view>
+        </view>
+        <view class="option-button {{parentIdentityIndex === 1 ? 'active' : ''}}" 
+              bindtap="selectParentIdentity" data-index="1">
+          <view class="option-icon parent-icon parent-mom"></view>
+          <view class="option-text">妈妈</view>
+        </view>
+        <view class="option-button {{parentIdentityIndex === 2 ? 'active' : ''}}" 
+              bindtap="selectParentIdentity" data-index="2">
+          <view class="option-icon parent-icon parent-other"></view>
+          <view class="option-text">其他</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 孩子年龄选择 -->
+    <view class="option-group">
+      <view class="option-label">孩子年龄</view>
+      <view class="option-buttons">
+        <view class="option-button {{ageRangeIndex === 0 ? 'active' : ''}}" 
+              bindtap="selectAgeRange" data-index="0">
+          <view class="option-text">3-5岁</view>
+        </view>
+        <view class="option-button {{ageRangeIndex === 1 ? 'active' : ''}}" 
+              bindtap="selectAgeRange" data-index="1">
+          <view class="option-text">6-9岁</view>
+        </view>
+        <view class="option-button {{ageRangeIndex === 2 ? 'active' : ''}}" 
+              bindtap="selectAgeRange" data-index="2">
+          <view class="option-text">10-12岁</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 游戏类型选择 -->
+    <view class="option-group">
+      <view class="option-label">游戏类型</view>
+      <view class="option-buttons game-types">
+        <view class="option-button {{gameTypeIndex === 0 ? 'active' : ''}}" 
+              bindtap="selectGameType" data-index="0">
+          <view class="option-icon game-icon game-quiet"></view>
+          <view class="option-text">安静类</view>
+        </view>
+        <view class="option-button {{gameTypeIndex === 1 ? 'active' : ''}}" 
+              bindtap="selectGameType" data-index="1">
+          <view class="option-icon game-icon game-active"></view>
+          <view class="option-text">体能类</view>
+        </view>
+        <view class="option-button {{gameTypeIndex === 2 ? 'active' : ''}}" 
+              bindtap="selectGameType" data-index="2">
+          <view class="option-icon game-icon game-language"></view>
+          <view class="option-text">语言类</view>
+        </view>
+        <view class="option-button {{gameTypeIndex === 3 ? 'active' : ''}}" 
+              bindtap="selectGameType" data-index="3">
+          <view class="option-icon game-icon game-creative"></view>
+          <view class="option-text">创造类</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 可用时间选择 -->
+    <view class="option-group">
+      <view class="option-label">可用时间 <text class="time-value">{{availableTimes[availableTimeIndex]}}</text></view>
+      <view class="time-slider-container">
+        <slider bindchange="timeSliderChange" min="0" max="2" value="{{availableTimeIndex}}" 
+                activeColor="#6A5ACD" block-size="28" block-color="#6A5ACD" show-value="{{false}}"/>
+        <view class="time-marks">
+          <text>5分钟</text>
+          <text>10分钟</text>
+          <text>15分钟+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 按钮区域 -->
+  <view class="action-area">
+    <button class="generate-btn {{isGenerating ? 'generating' : ''}}" bindtap="generateGame" disabled="{{isGenerating}}">
+      <block wx:if="{{!isGenerating}}">
+        <view class="btn-content">
+          <view class="btn-icon"></view>
+          <text>生成游戏</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="loading-animation">
+          <view class="loading-dot"></view>
+          <view class="loading-dot"></view>
+          <view class="loading-dot"></view>
+        </view>
+        <text>生成中...</text>
+      </block>
+    </button>
+    <view class="quick-generate" bindtap="quickGenerate">
+      <text>快速生成</text>
+      <text class="quick-hint">使用默认设置</text>
+    </view>
+    <view class="limit-hint">今日剩余生成次数: {{3 - generationCount}}</view>
+  </view>
+  
+  <!-- 历史推荐区域 -->
+  <view class="history-section" wx:if="{{recentGames && recentGames.length > 0}}">
+    <view class="section-title">最近生成的游戏</view>
+    <scroll-view class="recent-games" scroll-x="true">
+      <view class="recent-game-item" wx:for="{{recentGames}}" wx:key="id" bindtap="viewRecentGame" data-id="{{item.id}}">
+        <view class="recent-game-icon"></view>
+        <view class="recent-game-title">{{item.title}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view> 
