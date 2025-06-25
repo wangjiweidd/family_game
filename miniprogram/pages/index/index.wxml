@@ -1,0 +1,73 @@
+<view class="container">
+  <!-- 页面内容区域 -->
+  <view class="page-content">
+    <!-- 顶部引导区 -->
+    <view class="hero-container">
+      <view class="hero-content">
+        <text class="hero-title">亲子游戏生成器</text>
+        <text class="hero-subtitle">根据您的需求，生成适合的亲子互动游戏</text>
+        <view class="hero-tags">
+          <view class="hero-tag">益智</view>
+          <view class="hero-tag">互动</view>
+          <view class="hero-tag">快乐</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 问题区域 -->
+    <view class="questions-container">
+      <!-- 活动类型 -->
+      <view class="question-section">
+        <view class="question-tag">活动类型 <text class="hint">选择一项</text></view>
+        <scroll-view class="options-scroll" scroll-x="true" enhanced show-scrollbar="{{false}}">
+          <option-bubble icon="🏠" label="室内" type="indoor" selected="{{activityType === 'indoor'}}" bindselect="selectActivityType"></option-bubble>
+          <option-bubble icon="🌳" label="户外" type="outdoor" selected="{{activityType === 'outdoor'}}" bindselect="selectActivityType"></option-bubble>
+          <option-bubble icon="🚗" label="旅行" type="travel" selected="{{activityType === 'travel'}}" bindselect="selectActivityType"></option-bubble>
+          <option-bubble icon="🎂" label="派对" type="party" selected="{{activityType === 'party'}}" bindselect="selectActivityType"></option-bubble>
+          <option-bubble icon="🏊" label="水上" type="water" selected="{{activityType === 'water'}}" bindselect="selectActivityType"></option-bubble>
+        </scroll-view>
+      </view>
+
+      <!-- 游戏类型 -->
+      <view class="question-section">
+        <view class="question-tag">游戏类型 <text class="hint">可多选</text></view>
+        <view class="options-flex">
+          <option-chip icon="🧩" label="益智" type="puzzle" selected="{{gameTypes.puzzle}}" bindselect="toggleGameType"></option-chip>
+          <option-chip icon="🏃" label="运动" type="sports" selected="{{gameTypes.sports}}" bindselect="toggleGameType"></option-chip>
+          <option-chip icon="🎨" label="创意" type="creative" selected="{{gameTypes.creative}}" bindselect="toggleGameType"></option-chip>
+          <option-chip icon="🎭" label="角色扮演" type="roleplay" selected="{{gameTypes.roleplay}}" bindselect="toggleGameType"></option-chip>
+        </view>
+      </view>
+
+      <!-- 游戏时长 -->
+      <view class="question-section">
+        <view class="question-tag">游戏时长</view>
+        <view class="time-slider-container">
+          <view class="time-option {{duration === 'short' ? 'active' : ''}}" bindtap="selectDuration" data-duration="short">
+            <view class="time-icon">⚡</view>
+            <view class="time-label">5-15分钟</view>
+          </view>
+          <view class="time-option {{duration === 'medium' ? 'active' : ''}}" bindtap="selectDuration" data-duration="medium">
+            <view class="time-icon">⏱️</view>
+            <view class="time-label">15-30分钟</view>
+          </view>
+          <view class="time-option {{duration === 'long' ? 'active' : ''}}" bindtap="selectDuration" data-duration="long">
+            <view class="time-icon">🕰️</view>
+            <view class="time-label">30分钟以上</view>
+          </view>
+          <view class="time-slider-track">
+            <view class="time-slider-thumb" style="left: {{sliderPosition}}%;"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 推荐按钮 -->
+    <view class="recommend-btn-container">
+      <button class="recommend-btn" bindtap="generateGame">
+        <text class="recommend-btn-icon">✨</text>
+        生成游戏
+      </button>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="page-content">
+    <!-- 页面标题 -->
+    <view class="page-header">
+      <text class="page-title">我的收藏</text>
+      <text class="page-subtitle">已收藏 {{savedGames.length}} 个游戏</text>
+    </view>
+
+    <!-- 游戏列表 -->
+    <view class="games-list" wx:if="{{savedGames.length > 0}}">
+      <view class="game-card" wx:for="{{savedGames}}" wx:key="id" bindtap="openGame" data-id="{{item.id}}">
+        <view class="game-info">
+          <view class="game-title">{{item.title}}</view>
+          <view class="game-description">{{item.description}}</view>
+          <view class="game-tags">
+            <view class="tag">{{activityTypeMap[item.activityType]}}</view>
+            <view class="tag" wx:for="{{item.gameTypes}}" wx:for-item="type" wx:key="*this">{{gameTypeMap[type]}}</view>
+            <view class="tag">{{durationMap[item.duration]}}</view>
+          </view>
+        </view>
+        <view class="game-actions">
+          <view class="action-btn delete-btn" catchtap="deleteGame" data-id="{{item.id}}">
+            <text class="btn-icon">🗑️</text>
+          </view>
+          <view class="action-btn share-btn" catchtap="shareGame" data-id="{{item.id}}">
+            <text class="btn-icon">📤</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:else>
+      <view class="empty-icon">📚</view>
+      <view class="empty-text">您还没有收藏任何游戏</view>
+      <button class="primary-btn" bindtap="goToHome">去生成游戏</button>
+    </view>
+  </view>
+</view> 

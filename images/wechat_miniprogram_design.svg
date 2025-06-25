@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="414" height="736" viewBox="0 0 414 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="414" height="736" fill="#F7F7F7"/>
+    
+    <!-- 微信小程序标准导航栏 -->
+    <rect width="414" height="44" fill="#FFFFFF"/>
+    <text x="207" y="28" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="500" text-anchor="middle" fill="#000000">亲子游戏</text>
+    
+    <!-- 胶囊按钮 -->
+    <rect x="317" y="7" width="87" height="30" rx="15" fill="rgba(0,0,0,0.15)"/>
+    <line x1="360.5" y1="13" x2="360.5" y2="31" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    
+    <!-- 页面内容 -->
+    <rect x="0" y="44" width="414" height="636" fill="#F7F7F7"/>
+    
+    <!-- 顶部内容区 -->
+    <rect x="0" y="44" width="414" height="220" fill="#FFF8E9"/>
+    <text x="207" y="140" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" font-weight="800" text-anchor="middle" fill="#FF9F29">亲子游戏生成器</text>
+    <text x="207" y="170" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="500" text-anchor="middle" fill="#333333">根据您的需求，生成适合的亲子互动游戏</text>
+    
+    <!-- 标签 -->
+    <rect x="147" y="185" width="40" height="24" rx="12" fill="#FF9F29"/>
+    <text x="167" y="201" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#FFFFFF">益智</text>
+    
+    <rect x="192" y="185" width="40" height="24" rx="12" fill="#FF9F29"/>
+    <text x="212" y="201" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#FFFFFF">互动</text>
+    
+    <rect x="237" y="185" width="40" height="24" rx="12" fill="#FF9F29"/>
+    <text x="257" y="201" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle" fill="#FFFFFF">快乐</text>
+    
+    <!-- 问题区域 -->
+    <text x="30" y="290" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#333333">活动类型</text>
+    <text x="110" y="290" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#999999">选择一项</text>
+    
+    <!-- 选项 -->
+    <circle cx="50" cy="330" r="30" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1"/>
+    <text x="50" y="336" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" text-anchor="middle" fill="#333333">🏠</text>
+    <text x="50" y="380" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#333333">室内</text>
+    
+    <circle cx="120" cy="330" r="30" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1"/>
+    <text x="120" y="336" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" text-anchor="middle" fill="#333333">🌳</text>
+    <text x="120" y="380" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#333333">户外</text>
+    
+    <circle cx="190" cy="330" r="30" fill="#FFFFFF" stroke="#EEEEEE" stroke-width="1"/>
+    <text x="190" y="336" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" text-anchor="middle" fill="#333333">🚗</text>
+    <text x="190" y="380" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="middle" fill="#333333">旅行</text>
+    
+    <!-- 底部导航栏 -->
+    <rect x="0" y="680" width="414" height="56" fill="#FFFFFF"/>
+    <line x1="0" y1="680.5" x2="414" y2="680.5" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+    
+    <!-- 首页标签 -->
+    <text x="103.5" y="710" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle" fill="#FF9F29">首页</text>
+    <path d="M103.5 700 L111.5 693 L117.5 693 L117.5 705 L109.5 705 L109.5 700 L97.5 700 L97.5 705 L89.5 705 L89.5 693 L95.5 693 Z" fill="none" stroke="#FF9F29" stroke-width="2"/>
+    
+    <!-- 我的游戏标签 -->
+    <text x="310.5" y="710" font-family="PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle" fill="#999999">我的游戏</text>
+    <path d="M310.5 698 L300.5 690 L300.5 696 L290.5 696 L290.5 700 L300.5 700 L300.5 706 L310.5 698 Z M320.5 690 L320.5 696 L330.5 696 L330.5 700 L320.5 700 L320.5 706 L310.5 698 Z" fill="none" stroke="#999999" stroke-width="2"/>
+</svg> 

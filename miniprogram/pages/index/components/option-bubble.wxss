@@ -1,0 +1,56 @@
+.option-bubble {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.option-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  position: relative;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+}
+
+.option-bubble.selected .option-icon {
+  background-color: #FFF3E0;
+  box-shadow: 0 2px 8px rgba(255, 159, 41, 0.2);
+}
+
+.option-bubble.selected .option-icon::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: #FF9F29;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.option-label {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: #333333;
+  position: relative;
+  padding: 0 4px;
+}
+
+.option-bubble.selected .option-label {
+  color: #FF9F29;
+  font-weight: 700;
+} 

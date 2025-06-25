@@ -1,0 +1,38 @@
+.option-chip {
+  flex: 0 0 calc(50% - 10px);
+  margin: 0 5px 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 12px;
+  background-color: #F5F5F5;
+  border-radius: 12px;
+}
+
+.option-chip.selected {
+  background-color: #FFF3E0;
+  box-shadow: 0 2px 8px rgba(255, 159, 41, 0.2);
+}
+
+.option-chip .option-icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  margin-bottom: 0;
+  font-size: 18px;
+  position: relative;
+  background-color: transparent;
+}
+
+.option-chip.selected .option-icon {
+  color: #FF9F29;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.option-chip .option-label {
+  font-size: 13px;
+  padding: 0;
+  font-weight: 500;
+} 

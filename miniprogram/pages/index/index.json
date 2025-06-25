@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "亲子游戏生成器",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "option-bubble": "./components/option-bubble",
+    "option-chip": "./components/option-chip"
+  }
+} 

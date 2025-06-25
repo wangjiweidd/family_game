@@ -1,0 +1,4 @@
+<view class="option-bubble {{selected ? 'selected' : ''}}" bindtap="onSelect">
+  <view class="option-icon">{{icon}}</view>
+  <view class="option-label">{{label}}</view>
+</view> 

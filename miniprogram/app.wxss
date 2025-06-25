@@ -1,0 +1,100 @@
+/**app.wxss**/
+page {
+  background-color: #F7F7F7;
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 通用样式 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-top-sm {
+  margin-top: 10px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.padding {
+  padding: 16px;
+}
+
+/* 通用卡片样式 */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 按钮样式 */
+.primary-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #FF9F29;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.primary-btn::after {
+  border: none; /* 去除微信按钮默认边框 */
+}
+
+/* 标题样式 */
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* 标签样式 */
+.tag {
+  background-color: #FF9F29;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
+  margin: 0 4px 4px 0;
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+} 
